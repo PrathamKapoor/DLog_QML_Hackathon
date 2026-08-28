@@ -38,3 +38,10 @@ results_*/
 # Notebook checkpoints (the executed notebook itself IS committed -- it is the
 # main artifact, and its stored outputs are the judge's first experience).
 .ipynb_checkpoints/
+
+# Generated showcase page. Rebuilt in under a second by:
+#     python scripts/build_showcase.py
+# It embeds every figure as base64 (~900 KB), so committing it on each rebuild
+# would bloat history for a file that is fully derived from results/ + figures/.
+# The two scripts that produce it ARE committed.
+showcase.html

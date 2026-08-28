@@ -172,6 +172,20 @@ python scripts/run_experiment.py       # full study, ~200 s
 python scripts/build_notebook.py --execute
 ```
 
+### Showcase page
+
+`showcase.html` is a single self-contained page (no external requests, figures embedded) summarising the result for anyone who would rather not open a notebook.
+
+```bash
+python scripts/build_showcase.py       # build once
+python scripts/watch_showcase.py       # rebuild automatically on any change
+python scripts/watch_showcase.py --open --interval 1
+```
+
+The watcher polls the notebook, `configs/default.yaml`, `results/raw/`, `results/summary.json` and `figures/`, and regenerates the page whenever any of them move. Every number on it is read through `dlog_qml.audit`, the same path the notebook uses, so the page cannot show a figure that no run produced. It is gitignored because it is fully derived and rebuilds in under a second.
+
+Worth knowing: editing the notebook rebuilds the page immediately, but the *accuracies* come from `results/raw/`, which only `run_experiment.py` writes. To move a number, re-run the experiment — the watcher picks that up on its own.
+
 One seed controls the secret, the sampling and every `random_state`, so the dataset reproduces byte-for-byte. The kernels are exact statevector inner products, so there is no shot noise either.
 
 Verified on Windows 11, Python 3.13.14, numpy 2.5.2, pandas 2.3.3, scikit-learn 1.9.0, qiskit 2.5.1, qiskit-machine-learning 0.9.0, scipy 1.17.1, matplotlib 3.10.3.
