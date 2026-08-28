@@ -1,0 +1,60 @@
+# =============================================================================
+# DLOG-QML -- default experiment configuration
+#
+# These values reproduce the headline result reported in README.md.
+# Load with:  ExperimentConfig.load("configs/default.yaml")
+# Override on the command line, e.g.:  python scripts/demo.py --qubits 8
+# =============================================================================
+
+# --- group and concept -------------------------------------------------------
+# n_qubits fixes the register width; p is the largest SAFE prime below 2^n.
+#   n=6 -> p=59    n=7 -> p=107   n=8 -> p=227
+#   n=9 -> p=503   n=10 -> p=1019  (default)
+n_qubits: 10
+
+# 'half_interval' = the Liu/Arunachalam/Temme concept (no known poly-time
+#                   classical distinguisher under the DLog assumption).
+# 'parity'        = BROKEN control. The LSB of log_g(h) is the quadratic-
+#                   residuosity bit, recoverable in O(log p) by Euler's
+#                   criterion. Use only to demonstrate the falsification.
+labeling: half_interval
+
+# Master seed. Controls the secret shift s = SHA-256(...) mod (p-1), the sample
+# draw, and every sklearn random_state. Runs are byte-for-byte reproducible.
+seed: 20260828
+
+# --- dataset -----------------------------------------------------------------
+# Must be even (exact 50/50 balance). (n_train + n_test)/2 must not exceed
+# q = (p-1)/2, the number of exponents carrying each label.
+n_train: 200
+n_test: 50
+
+# --- quantum feature maps ----------------------------------------------------
+# Coset window M = 2^window_bits. null -> auto, chosen so M ~ (p-1)/8.
+# The closed-form triangular overlap requires 2M <= p-1.
+window_bits: null
+
+# Repetitions of the generic hardware-efficient control map.
+ladder_reps: 2
+
+# --- classical baselines -----------------------------------------------------
+rf_n_estimators: 100
+mlp_hidden: [64, 32]
+mlp_max_iter: 3000
+svm_C_grid: [0.1, 1.0, 10.0, 100.0, 1000.0]
+svm_gamma_grid: ["scale", 0.01, 0.1, 1.0, 10.0]
+qsvm_C_grid: [0.1, 1.0, 10.0, 100.0, 1000.0]
+cv_folds: 5
+
+# Adds Linear-SVM, Poly-SVM, ExtraTrees, GradientBoosting and kNN so the
+# separation cannot be blamed on one weak model family.
+extra_baselines: true
+
+# --- robustness --------------------------------------------------------------
+n_seeds: 20
+sweep_qubits: [6, 7, 8, 9, 10]
+
+# --- output ------------------------------------------------------------------
+results_dir: results
+figures_dir: figures        # top-level figures/ directory
+make_plots: true

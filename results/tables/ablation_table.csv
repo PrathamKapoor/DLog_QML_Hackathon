@@ -1,0 +1,14 @@
+component,variant,accuracy,delta_vs_full,question,interpretation
+Full system,"coset kernel, default window",0.94,0.0,reference configuration,structure-aware representation
+Representation,generic Rz/Rx/CZ feature map,0.6,-0.33999999999999997,Would any expressive quantum feature map do?,geometry mismatch -- being quantum is not sufficient
+Representation,best classical (Linear-SVM),0.62,-0.31999999999999995,Is a classical kernel on the same bits enough?,no access to the dlog coordinate
+Coset window,m=1 (M=2),0.74,-0.19999999999999996,Does the result hinge on a tuned window size?,too narrow: near-orthogonal kernel
+Coset window,m=2 (M=4),0.88,-0.05999999999999994,Does the result hinge on a tuned window size?,robust
+Coset window,m=3 (M=8),0.98,0.040000000000000036,Does the result hinge on a tuned window size?,robust
+Coset window,m=4 (M=16),0.96,0.020000000000000018,Does the result hinge on a tuned window size?,robust
+Coset window,m=5 (M=32),0.94,0.0,Does the result hinge on a tuned window size?,robust
+Coset window,m=6 (M=64),0.94,0.0,Does the result hinge on a tuned window size?,robust
+Coset window,m=7 (M=128),0.94,0.0,Does the result hinge on a tuned window size?,default
+Coset window,m=8 (M=256),0.94,0.0,Does the result hinge on a tuned window size?,robust
+Target concept,coset kernel on parity concept,0.46,-0.4799999999999999,Is the coset kernel a universal cheat?,local kernel vs alternating concept -- fails
+Target concept,Legendre attack on parity concept,1.0,0.06000000000000005,Is every dlog-derived label actually hard?,parity has no trapdoor -- broken in O(log p)

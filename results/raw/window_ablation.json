@@ -1,0 +1,86 @@
+{
+  "default_window_bits": 7,
+  "group_order": 1018,
+  "rows": [
+    {
+      "window_bits": 1,
+      "window_M": 2,
+      "fraction_of_group": 0.0019646365422396855,
+      "coset_accuracy": 0.74,
+      "coset_auc": 0.8128,
+      "offdiag_mean": 0.0005025125628140702,
+      "effective_rank": 197.4765486674765,
+      "is_default": false
+    },
+    {
+      "window_bits": 2,
+      "window_M": 4,
+      "fraction_of_group": 0.003929273084479371,
+      "coset_accuracy": 0.88,
+      "coset_auc": 0.9760000000000001,
+      "offdiag_mean": 0.001717964824120603,
+      "effective_rank": 185.0066927634277,
+      "is_default": false
+    },
+    {
+      "window_bits": 3,
+      "window_M": 8,
+      "fraction_of_group": 0.007858546168958742,
+      "coset_accuracy": 0.98,
+      "coset_auc": 0.9935999999999999,
+      "offdiag_mean": 0.004228172110552763,
+      "effective_rank": 161.0074996903817,
+      "is_default": false
+    },
+    {
+      "window_bits": 4,
+      "window_M": 16,
+      "fraction_of_group": 0.015717092337917484,
+      "coset_accuracy": 0.96,
+      "coset_auc": 0.9968,
+      "offdiag_mean": 0.009193035489949748,
+      "effective_rank": 125.89504724735238,
+      "is_default": false
+    },
+    {
+      "window_bits": 5,
+      "window_M": 32,
+      "fraction_of_group": 0.03143418467583497,
+      "coset_accuracy": 0.94,
+      "coset_auc": 0.9968,
+      "offdiag_mean": 0.019809987437185924,
+      "effective_rank": 86.84520584479766,
+      "is_default": false
+    },
+    {
+      "window_bits": 6,
+      "window_M": 64,
+      "fraction_of_group": 0.06286836935166994,
+      "coset_accuracy": 0.94,
+      "coset_auc": 0.9968,
+      "offdiag_mean": 0.04109586016017588,
+      "effective_rank": 53.25378085175322,
+      "is_default": false
+    },
+    {
+      "window_bits": 7,
+      "window_M": 128,
+      "fraction_of_group": 0.12573673870333987,
+      "coset_accuracy": 0.94,
+      "coset_auc": 0.9968,
+      "offdiag_mean": 0.08319129522122327,
+      "effective_rank": 30.109452509306866,
+      "is_default": true
+    },
+    {
+      "window_bits": 8,
+      "window_M": 256,
+      "fraction_of_group": 0.25147347740667975,
+      "coset_accuracy": 0.94,
+      "coset_auc": 0.9968,
+      "offdiag_mean": 0.16724588518765704,
+      "effective_rank": 16.187612681531323,
+      "is_default": false
+    }
+  ]
+}

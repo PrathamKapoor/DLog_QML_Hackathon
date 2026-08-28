@@ -1,0 +1,12 @@
+control,expectation,observed,passed,would_invalidate_if
+Hidden-x oracle succeeds,high accuracy given the hidden coordinate,0.960,True,labels are noise or the generator is broken
+Generic quantum kernel fails,chance level,0.600 (p=0.203),True,"the effect is 'quantum', not 'structure-aware'"
+Legendre attack fails on target,chance level on half-interval,0.460,True,a poly-time classical shortcut explains the label
+No competitor beats chance,no legitimate model significant at 1%,none,True,the concept is classically learnable by a tested method
+Train/test exponents disjoint,no shared exponent between splits,True,True,the gap could be memorisation
+Exact class balance,50/50 in both splits,"train {'positive': 100, 'negative': 100}, test {'positive': 25, 'negative': 25}",True,chance level would not be 0.5
+Kernel equals circuit definition,agreement < 1e-9,"3.0e-13 (circuits), 4.4e-16 (closed form)",True,the simulated kernel is not the fidelity kernel
+Coset kernel fails on parity,chance on a mismatched concept,0.460,True,"the quantum kernel is a universal cheat, not structure-aware"
+Legendre attack breaks parity,near-perfect on the naive concept,1.000,True,our falsification tool does not actually work
+Separation holds across seeds,minimum separation > 0.10,min +0.240 over 20 seeds,True,the result is one lucky seed
+Window ablation remains strong,>= 3 windows above 0.85,7/8 windows above 0.85,True,the result depends on one tuned hyperparameter

@@ -1,0 +1,55 @@
+# ==============================================================================
+#  Provable Quantum Advantage on the Discrete-Logarithm Concept Class
+#  Pinned dependency set. Python 3.10 - 3.13.
+#
+#  Install:   python -m pip install -r requirements.txt
+#  Verify:    python -c "import numpy,pandas,sklearn,qiskit; print('ok')"
+# ==============================================================================
+
+# --- Core numerics and data -------------------------------------------------
+numpy>=1.26,<3.0
+pandas>=2.0,<3.0
+scikit-learn>=1.3,<2.0
+
+# --- Quantum stack ----------------------------------------------------------
+# qiskit >= 1.0 is required: the script imports `qiskit.circuit.library
+# .StatePreparation` and `qiskit.quantum_info.Statevector`, whose module paths
+# changed in the 0.x -> 1.0 reorganisation.
+qiskit>=1.0,<3.0
+
+# Optional. Only used by `--qml-crosscheck`, which re-derives a 12x12 block of
+# the ladder Gram matrix with FidelityQuantumKernel as an independent audit.
+# The script degrades cleanly (prints "skipped") if this is absent.
+qiskit-machine-learning>=0.7,<1.0
+
+# --- Figures ----------------------------------------------------------------
+# Optional. `--no-plots` skips it entirely; the script also catches ImportError.
+matplotlib>=3.7,<4.0
+
+# ==============================================================================
+#  DELIBERATELY NOT REQUIRED
+# ==============================================================================
+#  qiskit-aer
+#    Every kernel in this project is evaluated by EXACT statevector simulation
+#    via qiskit.quantum_info.Statevector, so results carry no shot noise and Aer
+#    buys nothing. Install it only if you want to add a sampling-noise study:
+#        pip install "qiskit-aer>=0.14"
+#    Note that Aer wheels lag new CPython releases; on Python 3.13 it may need
+#    to build from source. That is exactly why it is not a hard dependency.
+#
+#  scipy
+#    Not needed. The exact two-sided binomial test and the Wilson score interval
+#    are implemented in the standard library (math.comb), so the statistical
+#    reporting has no extra dependency.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Reference environment -- this exact combination was used to produce the
+# numbers quoted in README.md Section 5 (Windows 11, Python 3.13.14):
+#     numpy                    2.5.2
+#     pandas                   2.3.3
+#     scikit-learn             1.9.0
+#     qiskit                   2.5.1
+#     qiskit-machine-learning  0.9.0
+#     matplotlib               3.10.3
+# ------------------------------------------------------------------------------

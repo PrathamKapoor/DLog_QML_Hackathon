@@ -1,0 +1,151 @@
+cff-version: 1.2.0
+title: "DLOG-QML: Quantum learning on a cryptographically hidden coordinate system"
+message: >-
+  If you use this software, please cite it using the metadata below.
+  Please ALSO cite Liu, Arunachalam & Temme (2021), which is the source of the
+  concept class, the coset-state feature map, and the asymptotic separation
+  theorem. This repository is an independent reproducible implementation and
+  falsification study; it does not claim the underlying theory as novel.
+type: software
+version: 1.0.0
+date-released: "2026-08-28"
+license: MIT
+abstract: >-
+  A reproducible, falsifiable finite-size study of the discrete-logarithm
+  concept class of Liu, Arunachalam and Temme (Nature Physics 17, 1013, 2021).
+  A binary concept whose label depends on its input only through a discrete
+  logarithm is presented to learners that observe only the binary encoding of
+  the corresponding group element. Over 20 seeds at p = 1019, a Shor-style
+  coset-state quantum kernel reaches 98.9 +/- 1.8 per cent held-out accuracy
+  while eleven competing models -- including a tuned RBF-SVM, gradient
+  boosting, an MLP and a strong generic hardware-efficient quantum kernel --
+  cluster between 49.0 and 54.1 per cent, none significantly above chance.
+  The work ships four falsification controls (a generic quantum kernel, a
+  polynomial-time Legendre/Euler attack that breaks a naive variant of the
+  construction, a hidden-coordinate leakage oracle, and a mismatched-concept
+  test on which the quantum kernel itself fails), paired significance testing,
+  and explicit separation of measured results from theoretical and asymptotic
+  claims. The instance is deliberately small and classically tractable; no
+  cryptographic-scale advantage and no quantum hardware result is claimed.
+keywords:
+  - quantum machine learning
+  - quantum kernel methods
+  - discrete logarithm
+  - concept class
+  - reproducibility
+  - falsification
+  - qiskit
+authors:
+  - name: "DLOG-QML contributors"
+repository-code: "https://github.com/REPLACE-ME/dlog-qml"
+references:
+  - type: article
+    title: >-
+      A rigorous and robust quantum speed-up in supervised machine learning
+    authors:
+      - family-names: Liu
+        given-names: Yunchao
+      - family-names: Arunachalam
+        given-names: Srinivasan
+      - family-names: Temme
+        given-names: Kristan
+    journal: "Nature Physics"
+    volume: 17
+    issue: 9
+    start: 1013
+    end: 1017
+    year: 2021
+    doi: "10.1038/s41567-021-01287-z"
+    notes: >-
+      Source of the concept class, the coset-state feature map, and the
+      asymptotic separation theorem. Preprint arXiv:2010.02174.
+  - type: article
+    title: "Supervised learning with quantum-enhanced feature spaces"
+    authors:
+      - family-names: "Havlicek"
+        given-names: "Vojtech"
+      - family-names: "Corcoles"
+        given-names: "Antonio D."
+      - family-names: Temme
+        given-names: Kristan
+      - family-names: Harrow
+        given-names: "Aram W."
+      - family-names: Kandala
+        given-names: Abhinav
+      - family-names: Chow
+        given-names: "Jerry M."
+      - family-names: Gambetta
+        given-names: "Jay M."
+    journal: "Nature"
+    volume: 567
+    start: 209
+    end: 212
+    year: 2019
+    doi: "10.1038/s41586-019-0980-2"
+    notes: >-
+      Second-order feature map used here as the generic quantum negative
+      control. Preprint arXiv:1804.11326.
+  - type: article
+    title: >-
+      Polynomial-time algorithms for prime factorization and discrete
+      logarithms on a quantum computer
+    authors:
+      - family-names: Shor
+        given-names: "Peter W."
+    journal: "SIAM Journal on Computing"
+    volume: 26
+    issue: 5
+    start: 1484
+    end: 1509
+    year: 1997
+    doi: "10.1137/S0097539795293172"
+    notes: >-
+      The O(n^3) coset-state preparation referenced for the asymptotic regime.
+      Cited, not implemented here. Preprint arXiv:quant-ph/9508027.
+  - type: article
+    title: >-
+      How to Generate Cryptographically Strong Sequences of Pseudorandom Bits
+    authors:
+      - family-names: Blum
+        given-names: Manuel
+      - family-names: Micali
+        given-names: Silvio
+    journal: "SIAM Journal on Computing"
+    volume: 13
+    issue: 4
+    start: 850
+    end: 864
+    year: 1984
+    doi: "10.1137/0213053"
+    notes: >-
+      Hardcore bits of the discrete logarithm; the basis for rejecting the
+      parity labelling as a valid instance.
+  - type: article
+    title: >-
+      Note on the sampling error of the difference between correlated
+      proportions or percentages
+    authors:
+      - family-names: McNemar
+        given-names: Quinn
+    journal: "Psychometrika"
+    volume: 12
+    issue: 2
+    start: 153
+    end: 157
+    year: 1947
+    doi: "10.1007/BF02295996"
+    notes: "Paired model-comparison test used throughout."
+  - type: article
+    title: >-
+      Probable inference, the law of succession, and statistical inference
+    authors:
+      - family-names: Wilson
+        given-names: "Edwin B."
+    journal: "Journal of the American Statistical Association"
+    volume: 22
+    issue: 158
+    start: 209
+    end: 212
+    year: 1927
+    doi: "10.1080/01621459.1927.10502953"
+    notes: "Score interval used for every reported accuracy."

@@ -1,0 +1,112 @@
+{
+  "measured": true,
+  "rows": [
+    {
+      "n_qubits": 6,
+      "p": 59,
+      "n_train": 48,
+      "n_test": 10,
+      "coset_accuracy": 1.0,
+      "coset_ci": [
+        0.7224672001371107,
+        0.9999999999999999
+      ],
+      "generic_accuracy": 0.6,
+      "best_competitor": "MLP",
+      "best_competitor_accuracy": 0.7,
+      "separation": 0.30000000000000004,
+      "coset_simulate_seconds": 0.0004,
+      "ladder_simulate_seconds": 0.2663,
+      "statevector_dim": 64,
+      "statevector_megabytes": 0.056640625,
+      "wall_clock_seconds": 2.21
+    },
+    {
+      "n_qubits": 7,
+      "p": 107,
+      "n_train": 86,
+      "n_test": 20,
+      "coset_accuracy": 0.95,
+      "coset_ci": [
+        0.763868806553258,
+        0.9911185511992047
+      ],
+      "generic_accuracy": 0.45,
+      "best_competitor": "Legendre attack (control)",
+      "best_competitor_accuracy": 0.5,
+      "separation": 0.44999999999999996,
+      "coset_simulate_seconds": 0.0017,
+      "ladder_simulate_seconds": 0.7674,
+      "statevector_dim": 128,
+      "statevector_megabytes": 0.20703125,
+      "wall_clock_seconds": 3.06
+    },
+    {
+      "n_qubits": 8,
+      "p": 227,
+      "n_train": 182,
+      "n_test": 44,
+      "coset_accuracy": 0.9772727272727273,
+      "coset_ci": [
+        0.8819229030178671,
+        0.9959767479399467
+      ],
+      "generic_accuracy": 0.38636363636363635,
+      "best_competitor": "Legendre attack (control)",
+      "best_competitor_accuracy": 0.6136363636363636,
+      "separation": 0.36363636363636365,
+      "coset_simulate_seconds": 0.0034,
+      "ladder_simulate_seconds": 1.8038,
+      "statevector_dim": 256,
+      "statevector_megabytes": 0.8828125,
+      "wall_clock_seconds": 4.71
+    },
+    {
+      "n_qubits": 9,
+      "p": 503,
+      "n_train": 200,
+      "n_test": 50,
+      "coset_accuracy": 1.0,
+      "coset_ci": [
+        0.9286524008666414,
+        1.0
+      ],
+      "generic_accuracy": 0.46,
+      "best_competitor": "Quantum generic kernel",
+      "best_competitor_accuracy": 0.46,
+      "separation": 0.54,
+      "coset_simulate_seconds": 0.0068,
+      "ladder_simulate_seconds": 2.4736,
+      "statevector_dim": 512,
+      "statevector_megabytes": 1.953125,
+      "wall_clock_seconds": 5.34
+    },
+    {
+      "n_qubits": 10,
+      "p": 1019,
+      "n_train": 200,
+      "n_test": 50,
+      "coset_accuracy": 0.94,
+      "coset_ci": [
+        0.8378290831116182,
+        0.979385029651026
+      ],
+      "generic_accuracy": 0.6,
+      "best_competitor": "RBF-SVM (tuned)",
+      "best_competitor_accuracy": 0.6,
+      "separation": 0.33999999999999997,
+      "coset_simulate_seconds": 0.0181,
+      "ladder_simulate_seconds": 2.9079,
+      "statevector_dim": 1024,
+      "statevector_megabytes": 3.90625,
+      "wall_clock_seconds": 5.69
+    }
+  ],
+  "qubit_sizes": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
+}

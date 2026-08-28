@@ -1,0 +1,49 @@
+{
+  "n_qubits": 10,
+  "labeling": "half_interval",
+  "seed": 20260828,
+  "n_train": 200,
+  "n_test": 50,
+  "window_bits": null,
+  "ladder_reps": 2,
+  "rf_n_estimators": 100,
+  "mlp_hidden": [
+    64,
+    32
+  ],
+  "mlp_max_iter": 3000,
+  "svm_C_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "svm_gamma_grid": [
+    "scale",
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "qsvm_C_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "cv_folds": 5,
+  "extra_baselines": true,
+  "n_seeds": 20,
+  "sweep_qubits": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "results_dir": "results",
+  "figures_dir": "figures",
+  "make_plots": true
+}

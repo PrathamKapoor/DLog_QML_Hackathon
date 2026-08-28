@@ -1,0 +1,61 @@
+# =============================================================================
+#  DLOG-QML -- pinned dependency set.  Python 3.10 - 3.13.
+#
+#    python -m pip install -r requirements.txt
+#    python -c "import numpy,pandas,sklearn,qiskit; print('ok')"
+# =============================================================================
+
+# --- core numerics and data --------------------------------------------------
+numpy>=1.26,<3.0
+pandas>=2.0,<3.0
+scikit-learn>=1.3,<2.0
+
+# --- quantum stack -----------------------------------------------------------
+# qiskit >= 1.0 required: `qiskit.circuit.library.StatePreparation` and
+# `qiskit.quantum_info.Statevector` moved during the 0.x -> 1.0 reorganisation.
+qiskit>=1.0,<3.0
+
+# --- configuration -----------------------------------------------------------
+PyYAML>=6.0,<7.0
+
+# --- figures -----------------------------------------------------------------
+matplotlib>=3.7,<4.0
+
+# =============================================================================
+#  OPTIONAL -- everything below is degraded-gracefully, not required
+# =============================================================================
+# Independent audit of the generic kernel via FidelityQuantumKernel. Used only
+# by the cross-check in docs/EXPERIMENT_PROTOCOL.md Section 9.
+qiskit-machine-learning>=0.7,<1.0
+
+# Test suite only. scipy is used to cross-validate our exact binomial and
+# McNemar implementations against scipy.stats.binomtest; those tests skip
+# cleanly (pytest.importorskip) if it is absent.
+pytest>=7.0
+scipy>=1.10
+
+# =============================================================================
+#  DELIBERATELY NOT REQUIRED
+# =============================================================================
+#  qiskit-aer
+#    Every kernel is evaluated by EXACT statevector simulation via
+#    qiskit.quantum_info.Statevector, so results carry no shot noise and Aer
+#    buys nothing. Install it only to add a sampling-noise study:
+#        pip install "qiskit-aer>=0.14"
+#    Aer wheels also lag new CPython releases; on Python 3.13 it may need to
+#    build from source. That is exactly why it is not a hard dependency.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Reference environment -- the exact stack that produced every number in
+# README.md and docs/TECHNICAL_REPORT.md (Windows 11, Python 3.13.14):
+#     numpy                    2.5.2
+#     pandas                   2.3.3
+#     scikit-learn             1.9.0
+#     qiskit                   2.5.1
+#     qiskit-machine-learning  0.9.0
+#     scipy                    1.17.1
+#     matplotlib               3.10.3
+#     PyYAML                   6.0.2
+#     pytest                   9.1.1
+# -----------------------------------------------------------------------------
