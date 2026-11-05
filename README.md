@@ -86,7 +86,9 @@ Landing at chance was not surprising; we wanted a reason, so we looked at the Gr
 
 ![kernel diagnostics](figures/fig6_kernel_diagnostics.png)
 
-Both kernels put most pairs near zero, which is expected for a local kernel. The difference is the tail: for the coset kernel only same-class pairs reach high similarity. For the generic kernel the two distributions sit on top of each other and the means differ by 0.0002. A kernel with near-full effective rank and no class structure can fit the training set exactly — it does, with every point a support vector — and has nothing left to generalise with.
+Both kernels exhibit a strong concentration of pairwise similarities near zero, consistent with the expected behaviour of local quantum kernels. Their distinguishing characteristic, however, lies in the distributional tails. The coset kernel exhibits pronounced class-dependent structure, with high-similarity values occurring predominantly between samples belonging to the same class. In contrast, the generic kernel produces substantially overlapping intra-class and inter-class similarity distributions, with a negligible difference in their mean similarities (0.0002).
+
+This distinction has important implications for generalisation. Despite its near-full effective rank, the generic kernel exhibits little discriminative structure. Consequently, it can achieve perfect training-set fit while retaining poor generalisation capability, with every training observation becoming a support vector. This suggests that high kernel expressivity alone is insufficient for effective classification; the kernel must also preserve meaningful class-dependent structure.
 
 We would call that consistent with kernel concentration rather than a complete mechanistic explanation.
 
